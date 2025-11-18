@@ -3,7 +3,7 @@
 char    *ft_line(int fd, char *buffer)
 {
     char    *line;
-    long   bytes;
+    long    bytes;
     char    *tmp;
 
     line = malloc(BUFFER_SIZE * sizeof(char) + 1);
@@ -16,9 +16,8 @@ char    *ft_line(int fd, char *buffer)
     if (strchr(line, '\n') != NULL)
     {
         tmp = malloc(sizeof(line));
-        tmp = ft_trim_line(line);
-
-    }
+		tmp = ft_trim_line(line);
+	}
 }
 
 char    *get_next_line(int fd)
