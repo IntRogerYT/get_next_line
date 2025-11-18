@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 11:53:45 by rcamps-v          #+#    #+#             */
+/*   Updated: 2025/11/18 11:53:48 by rcamps-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-char	*ft_strchr(const char *s, int c)
+ssize_t	ft_strchr_pos(const char *s, int c)
 {
 	unsigned char	chr;
+	ssize_t			i;
 
 	chr = (unsigned char)c;
-	while (*s)
+	i = 0;
+	while (s[i])
 	{
-		if (*s == chr)
-			return ((char *)s);
-		s++;
+		if (s[i] == chr)
+			return (i);
+		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)s);
-	return (NULL);
+	return (-1);
 }
